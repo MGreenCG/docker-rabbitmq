@@ -41,6 +41,10 @@ fi
 : "${RABBITMQ_MANAGEMENT_SSL_CERTFILE:=$RABBITMQ_SSL_CERTFILE}"
 : "${RABBITMQ_MANAGEMENT_SSL_KEYFILE:=$RABBITMQ_SSL_KEYFILE}"
 
+# Ensure these vars
+: "${RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS:=${RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS:-}}"
+: "${RABBITMQ_CTL_ERL_ARGS:=${RABBITMQ_CTL_ERL_ARGS:-}}"
+
 # Allowed env vars that will be read from mounted files (i.e. Docker Secrets):
 fileEnvKeys=(
 	default_user
